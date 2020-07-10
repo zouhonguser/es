@@ -1,0 +1,21 @@
+{
+    "number_of_shards":"1",
+    "index.refresh_interval":"15s",
+    "index":{
+      "analysis":{
+        "analyzer":{
+          "ik_pinyin_analyzer":{
+            "type":"custom",
+            "tokenizer":"ik_smart",
+            "filter":"pinyin_filter"
+          }
+        },
+        "filter":{
+          "pinyin_filter":{
+            "type":"pinyin",
+            "keep_first_letter": false
+          }
+        }
+      }
+    }
+  }
